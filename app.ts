@@ -63,44 +63,79 @@
 
 //INTERFACES
 
-interface IAnimal {
-  nome: string;
-  idade: number;
-  estaVivo: boolean;
+// interface IAnimal {
+//   nome: string;
+//   idade: number;
+//   estaVivo: boolean;
 
-  nascer(): void;
-  crescer(): void;
-  morre(): void;
-}
-class Animal implements IAnimal {
-    nome: string;
-    idade: number;
-    estaVivo: boolean;
+//   nascer(): void;
+//   crescer(): void;
+//   morre(): void;
+// }
+// class Animal implements IAnimal {
+//   readonly nome: string;
+//   idade: number;
+//   private _estaVivo: boolean;
+
+//   get estaVivo(): boolean {
+//     return this._estaVivo;
+//   }
+
+//   constructor(nome: string, idade: number, estaVivo: boolean) {
+//     this.nome = nome;
+//     this.idade = 0;
+//     this._estaVivo = false;
+//   }
+//   nascer() {
+//     this._estaVivo = true;
+//     return console.log(`O ${this.nome} nasceu`);
+//   }
+//   crescer() {
+//     this.idade++;
+//     return console.log(`O ${this.nome} cresceu e agora tem ${this.idade} anos`);
+//   }
+//   morre() {
+//     this._estaVivo = false;
+//     return console.log(`O ${this.nome} morreu`);
+//   }
+// }
+// let cachorro = new Animal("Rex", 0, true);
+
+// cachorro.nascer();
+// cachorro.crescer();
+// cachorro.crescer();
+// cachorro.morre();
+
+// //_______________________________________________________________
+// //NAMESPACE
+// namespace Terrestre {
+//   export class Cachorro extends Animal {
+//     correr() {
+//       console.log(`${this.nome} está correndo`);
+//     }
+//   }
+//   export let cachorro = new Cachorro("rex", 12, true);
+// }
+
+// namespace Marinho {
+//   export class Golfinho extends Animal {
+//     nadar() {
+//       console.log(`${this.nome} está nadando`);
+//     }
+//   }
+//   export let golfinho = new Golfinho("Flipper", 5, true);
+// }
 
 
-    constructor(nome: string, idade: number, estaVivo: boolean) {
-        this.nome = nome;
-        this.idade = 0;
-        this.estaVivo = false;
-    }
-    nascer() {
-        this.estaVivo = true;
-        return console.log(`O ${this.nome} nasceu`);
-      };
-      crescer() {
-        this.idade++;
-        return console.log(`O ${this.nome} cresceu e agora tem ${this.idade} anos`);
-      };
-      morre() {
-        this.estaVivo = false;
-        return console.log(`O ${this.nome} morreu`);
-      };
-}
+// Terrestre.cachorro.correr();
+// Marinho.golfinho.nadar();
+
+//_____________________________________________________________________________
+//DECORATION 
+
+import calc from "./calc.js";
 
 
-let cachorro = new Animal("Rex", 0, true);
+console.log(calc.somar(10, 20));
+console.log(calc.sub(30, 20));
 
-cachorro.nascer();
-cachorro.crescer();
-cachorro.crescer();
-cachorro.morre();
